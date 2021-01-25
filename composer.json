@@ -1,0 +1,19 @@
+{
+    "name": "artox-lab/abstract-bus-event-message",
+    "description": "Abstract bus event message",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Meliukh",
+            "email": "d.meliukh@artox.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ArtoxLab\\AbstractBusEventMessage\\": "src/AbstractBusEventMessage"
+        }
+    },
+    "minimum-stability": "dev"
+}
