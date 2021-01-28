@@ -10,13 +10,14 @@ declare(strict_types=1);
 
 namespace ArtoxLab\AbstractBusEventMessage\V1;
 
-interface EventMessageInterface
+interface BusMessageInterface
 {
 
     /**
      * Change attributes
      *
-     * @param array $props
+     * @param array $props Attributes
+     *
      * @return bool
      */
     public function setAttributes(array $props) : bool;

@@ -9,10 +9,12 @@
             "email": "d.meliukh@artox.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.1.0"
+    },
     "autoload": {
         "psr-4": {
-            "ArtoxLab\\AbstractBusEventMessage\\": "src/AbstractBusEventMessage"
+            "ArtoxLab\\AbstractBusEventMessage\\": "src/"
         }
     },
     "minimum-stability": "dev"
