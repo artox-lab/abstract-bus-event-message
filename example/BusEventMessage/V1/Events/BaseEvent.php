@@ -11,6 +11,7 @@
 namespace ArtoxLab\BusEventMessage\V1\Events;
 
 use ArtoxLab\AbstractBusEventMessage\V1\Events\EventInterface;
+use JsonException;
 
 class BaseEvent implements EventInterface
 {
@@ -24,7 +25,7 @@ class BaseEvent implements EventInterface
     /**
      * Event Id
      *
-     * @var bool|string
+     * @var boolean|string
      */
     public $eventId;
 
@@ -83,7 +84,7 @@ class BaseEvent implements EventInterface
     {
         return substr(
             static::class,
-            strripos(static::class, "Events\\") + 7,
+            (strripos(static::class, "Events\\") + 7),
             strlen(static::class)
         );
     }
@@ -135,11 +136,13 @@ class BaseEvent implements EventInterface
     /**
      * Conversion to string
      *
+     * @throws JsonException
+     *
      * @return string
      */
     public function __toString(): string
     {
-        return json_encode(get_object_vars($this));
+        return json_encode(get_object_vars($this), JSON_THROW_ON_ERROR);
     }
 
 }

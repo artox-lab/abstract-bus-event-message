@@ -11,6 +11,7 @@ namespace BusEventMessage\V1;
 use ArtoxLab\AbstractBusEventMessage\V1\BusMessageInterface;
 use ArtoxLab\AbstractBusEventMessage\V1\Events\EventInterface;
 use InvalidArgumentException;
+use JsonException;
 
 class BusMessage implements BusMessageInterface
 {
@@ -47,11 +48,13 @@ class BusMessage implements BusMessageInterface
      * EntityMessage constructor.
      *
      * @param string $message Message
+     *
+     * @throws JsonException
      */
     public function __construct(string $message = '')
     {
         if (false === empty($message)) {
-            $this->setAttributes(json_decode($message, true));
+            $this->setAttributes(json_decode($message, true, 512, JSON_THROW_ON_ERROR));
         }
     }
 
@@ -103,11 +106,13 @@ class BusMessage implements BusMessageInterface
     /**
      * Conversion to string
      *
+     * @throws JsonException
+     *
      * @return string
      */
     public function __toString(): string
     {
-        return json_encode(get_object_vars($this));
+        return json_encode(get_object_vars($this), JSON_THROW_ON_ERROR);
     }
 
 }

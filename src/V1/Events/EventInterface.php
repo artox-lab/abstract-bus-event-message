@@ -76,4 +76,3 @@ interface EventInterface
     public function __toString(): string;
 
 }
-

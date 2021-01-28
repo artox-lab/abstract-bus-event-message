@@ -4,6 +4,8 @@
  * Example event
  *
  * @author Dmitry Meliukh <d.meliukh@artox.com>
+ *
+ * phpcs:disable Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
  */
 
 declare(strict_types=1);
