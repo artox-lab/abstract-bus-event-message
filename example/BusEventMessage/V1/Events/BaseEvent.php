@@ -11,7 +11,6 @@
 namespace ArtoxLab\BusEventMessage\V1\Events;
 
 use ArtoxLab\AbstractBusEventMessage\V1\Events\EventInterface;
-use JsonException;
 
 class BaseEvent implements EventInterface
 {
@@ -136,13 +135,11 @@ class BaseEvent implements EventInterface
     /**
      * Conversion to string
      *
-     * @throws JsonException
-     *
      * @return string
      */
     public function __toString(): string
     {
-        return json_encode(get_object_vars($this), JSON_THROW_ON_ERROR);
+        return json_encode(get_object_vars($this));
     }
 
 }

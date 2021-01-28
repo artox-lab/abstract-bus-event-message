@@ -12,7 +12,6 @@ namespace BusEventMessage\V1;
 
 use ArtoxLab\AbstractBusEventMessage\V1\BusMessageFactoryInterface;
 use ArtoxLab\AbstractBusEventMessage\V1\BusMessageInterface;
-use JsonException;
 
 class BusMessageFactory implements BusMessageFactoryInterface
 {
@@ -21,8 +20,6 @@ class BusMessageFactory implements BusMessageFactoryInterface
      * Create bus message instance
      *
      * @param string $message Message
-     *
-     * @throws JsonException
      *
      * @return BusMessageInterface
      */
